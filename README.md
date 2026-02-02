@@ -65,25 +65,25 @@ tic-tac-toe-game/
 
 ### Home Page
 <p align="center">
-  <img src="'/Users/EMI/Downloads/:screenshots:game-over.png'" width="500">
+  <img src="'/Users/EMI/Downloads/:screenshots:game-over.png'" width="350">
 </p>
 <em>Clean home page with Start Game and Exit buttons</em>
 
 ### Gameplay
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b4a749c9-727c-476b-af79-9e2e4307c2c8" width="500">
+  <img src="https://github.com/user-attachments/assets/b4a749c9-727c-476b-af79-9e2e4307c2c8" width="3500">
 </p>
 <em>Active game with score tracking and playable grid</em>
 
 ### Game Over
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b3b0c654-c21c-4f2a-9a7d-eb319c75613c" width="500">
+  <img src="https://github.com/user-attachments/assets/b3b0c654-c21c-4f2a-9a7d-eb319c75613c" width="350">
 </p>
 <em>Result overlay with win/tie message</em>
 
 ### Resume Dialog
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0b1cc4f3-20c7-4ea2-99fd-af77f15f725e" width="450">
+  <img src="https://github.com/user-attachments/assets/0b1cc4f3-20c7-4ea2-99fd-af77f15f725e" width="350">
 </p>
 <em>Dialog to resume game or return to home</em>
 
