@@ -65,13 +65,13 @@ tic-tac-toe-game/
 
 ### Home Page
 <p align="center">
-  <img src="'/Users/EMI/Downloads/:screenshots:game-over.png'" width="350">
+  <img src="https://github.com/user-attachments/assets/1203ec3e-ff14-4941-9d9c-67aa7ccc8309" width="500">
 </p>
 <em>Clean home page with Start Game and Exit buttons</em>
 
 ### Gameplay
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b4a749c9-727c-476b-af79-9e2e4307c2c8" width="3500">
+  <img src="https://github.com/user-attachments/assets/b4a749c9-727c-476b-af79-9e2e4307c2c8" width="350">
 </p>
 <em>Active game with score tracking and playable grid</em>
 
