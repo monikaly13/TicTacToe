@@ -64,19 +64,19 @@ tic-tac-toe-game/
 ## Screenshots
 
 ### Home Page
-![Home Page](./screenshots/home-Page.png)
+![Home Page](<img width="749" height="786" alt=":screenshots:game-over" src="https://github.com/user-attachments/assets/1203ec3e-ff14-4941-9d9c-67aa7ccc8309" />)
 *Clean home Page with Start Game and Exit buttons*
 
 ### Gameplay
-![Gameplay](./screenshots/gameplay.png)
+![Gameplay](<img width="747" height="785" alt=":screenshots:gameplay" src="https://github.com/user-attachments/assets/b4a749c9-727c-476b-af79-9e2e4307c2c8" />)
 *Active game with score tracking and playable grid*
 
 ### Game Over
-![Game Over](./screenshots/game-over.png)
+![Game Over](<img width="757" height="791" alt=":screenshots:home-Page" src="https://github.com/user-attachments/assets/b3b0c654-c21c-4f2a-9a7d-eb319c75613c" />)
 *Result overlay with win/tie message*
 
 ### Resume Dialog
-![Resume Dialog](./screenshots/resume-dialog.png)
+![Resume Dialog](<img width="752" height="785" alt=":screenshots:resume-dialog" src="https://github.com/user-attachments/assets/0b1cc4f3-20c7-4ea2-99fd-af77f15f725e" />)
 *Dialog to resume game or return to home*
 
 ---
