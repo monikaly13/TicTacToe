@@ -355,8 +355,8 @@ java -jar tic-tac-toe-game.jar
 | Member | GitHub | Role |
 |--------|--------|------|
 | [Monika Ly] | [@monikaly13](https://github.com/monikaly13) | Game Logic & Core Features 
-| [Pechvolak Heng] | [@Pech4-star]([https://github.com/username2](https://github.com/Pech4-star)) | UI/UX & Styling 
-| [Emi Sopheak] | [@ayyy-1e]([https://github.com/username3](https://github.com/ayyy-1e)) | Testing & Documentation 
+| [Pechvolak Heng] | [@Pech4-star](https://github.com/Pech4-star) | UI/UX & Styling 
+| [Emi Sopheak] | [@ayyy-1e](https://github.com/ayyy-1e) | Testing & Documentation 
 
 ---
 
