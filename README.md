@@ -64,17 +64,28 @@ tic-tac-toe-game/
 ## Screenshots
 
 ### Home Page
-### Home Page
-![Home Page](<img width="749" height="786" alt=":screenshots:game-over" src="https://github.com/user-attachments/assets/e2086c6a-f1dc-45f9-b60e-8e83db08b129" />)
+<p align="center">
+  <img src="'/Users/EMI/Downloads/:screenshots:game-over.png'" width="500">
+</p>
+<em>Clean home page with Start Game and Exit buttons</em>
 
 ### Gameplay
-![Gameplay](https://github.com/user-attachments/assets/b4a749c9-727c-476b-af79-9e2e4307c2c8)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b4a749c9-727c-476b-af79-9e2e4307c2c8" width="500">
+</p>
+<em>Active game with score tracking and playable grid</em>
 
 ### Game Over
-![Game Over](https://github.com/user-attachments/assets/b3b0c654-c21c-4f2a-9a7d-eb319c75613c)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b3b0c654-c21c-4f2a-9a7d-eb319c75613c" width="500">
+</p>
+<em>Result overlay with win/tie message</em>
 
 ### Resume Dialog
-![Resume Dialog](https://github.com/user-attachments/assets/0b1cc4f3-20c7-4ea2-99fd-af77f15f725e)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0b1cc4f3-20c7-4ea2-99fd-af77f15f725e" width="450">
+</p>
+<em>Dialog to resume game or return to home</em>
 
 
 ---
