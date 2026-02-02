@@ -1,6 +1,6 @@
 # Tic Tac Toe Game - FXGL & JavaFX
 
-A modern, 2D Tic Tac Toe game built with FXGL and JavaFX. Play against another player with smooth animations, persistent score tracking user-friendly interface.
+A modern 2D Tic Tac Toe game built with FXGL and JavaFX. This game supported two players gameplay with smooth UI transitions, persistent score tracking and user-friendly interface.
 
 ## Table of Contents
 - [Features](#features)
@@ -8,7 +8,7 @@ A modern, 2D Tic Tac Toe game built with FXGL and JavaFX. Play against another p
 - [Screenshots](#screenshots)
 - [Installation & Setup](#installation--setup)
 - [How to Run](#how-to-run)
-- [Code Explanation](#code-explanation)
+- [Code Overview](#code-Overview)
 - [Game Mechanics](#game-mechanics)
 - [AI Disclosure](#ai-disclosure)
 - [Release & Distribution](#release--distribution)
@@ -19,25 +19,25 @@ A modern, 2D Tic Tac Toe game built with FXGL and JavaFX. Play against another p
 ## Features
 
 ### Core Gameplay
-- **Two-Player Mode**: Play as X and O with automatic turn switching
-- **Win Detection**: Automatically detects rows, columns, and diagonal wins
-- **Tie Detection**: Identifies when the board is full with no winner
-- **Score Tracking**: Persistent win/tie counters throughout the session
-- **Smooth Animations**: Message overlays and transitions for game events
+- **Two-Players Mode**: Play as X and O with automatic turn switching.
+- **Win Detection**: Automatically detects win across rows, columns, and diagonals.
+- **Tie Detection**: Identifies when the board is full with no winner.
+- **Score Tracking**: Persistent win/tie tracking throughout the session.
+- **Smooth Animations**: Message overlays and transitions for game events.
 
 ### UI/UX Features
-- **Modern Dark Theme**: Professional dark interface (#0F0F0F) with blue accents (#3B82F6)
-- **Home Screen**: Start game or exit with intuitive menu
-- **Score Display**: Real-time tracking of X wins, O wins, and ties
-- **Game Messages**: 2-second overlay messages showing game results
-- **Dialog System**: Resume or return to home after game completion
-- **Responsive Layout**: 600x600px window with properly aligned components
+- **Modern Dark Theme**: Minimalist dark interface (#0F0F0F) with blue accents (#3B82F6)
+- **Home Screen**: Start game or exit with simple menu.
+- **Score Display**: Updates winning or ties instantly during gameplay.
+- **Game Messages**: 2-seconds overlay messages showing game results.
+- **Dialog System**: Option to resume or return to home page after game completion.
+- **Responsive Layout**: 600x600px window with properly aligned components.
 
 ### Technical Features
-- **FXGL Integration**: Uses GameApplication framework for game lifecycle
-- **JavaFX Styling**: Custom CSS-like button and layout styling
-- **Event Handling**: Efficient click detection with early returns for invalid moves
-- **State Management**: Separate board data structure from UI representation
+- **FXGL Integration**: Uses GameApplication framework for game lifecycle.
+- **JavaFX Styling**: Custom CSS-like button and layout styling.
+- **Event Handling**: Efficient click detection with early returns for invalid moves.
+- **State Management**: Separate board data structure from UI representation.
 
 ---
 
@@ -63,9 +63,9 @@ tic-tac-toe-game/
 
 ## Screenshots
 
-### Home Screen
-![Home Screen](./screenshots/home-screen.png)
-*Clean home screen with Start Game and Exit buttons*
+### Home Page
+![Home Page](./screenshots/home-Page.png)
+*Clean home Page with Start Game and Exit buttons*
 
 ### Gameplay
 ![Gameplay](./screenshots/gameplay.png)
@@ -101,7 +101,7 @@ The project uses Maven. FXGL and JavaFX dependencies are defined in `pom.xml`:
 mvn clean install
 ```
 
-**Key Dependencies:**
+**Main Dependencies:**
 - `com.almasb:fxgl-all:22.7` - FXGL Game Development Framework
 - `org.openjfx:javafx-*:22.0.2` - JavaFX libraries (graphics, controls, etc.)
 - `junit:junit:4.13.2` - Testing framework
@@ -116,7 +116,7 @@ mvn clean package
 # Using Maven
 mvn javafx:run
 
-# Or run the JAR directly
+# Or Using the JAR File
 java -jar target/tic-tac-toe-game-1.0.jar
 ```
 
@@ -134,7 +134,7 @@ java -jar target/tic-tac-toe-game-1.0.jar
    - Game ends when someone wins or the board fills up
 
 3. **View Results**
-   - A 2-second overlay shows the game result
+   - A 2-seconds overlay shows the game result
    - Board automatically resets for the next game
    - Scores persist throughout the session
 
@@ -175,7 +175,7 @@ The `startBox` VBox contains:
 - Exit button (closes application)
 
 #### 3. **Game Start** (`startGame()`)
-When players click Start Game:
+When player click "Start Game":
 1. Home screen UI is removed
 2. Game UI is added (score box, grid, buttons)
 3. Board state is initialized to empty
@@ -396,13 +396,13 @@ This project is licensed under the MIT License. See LICENSE file for details.
 
 ## Troubleshooting
 
-### Issue: Game doesn't start
+### Issue: Game does not start
 **Solution**: Ensure Java 11+ and JavaFX 22+ are installed:
 ```bash
 java -version
 ```
 
-### Issue: Maven dependencies fail
+### Issue: Maven dependency errors
 **Solution**: Clear Maven cache and reinstall:
 ```bash
 mvn clean
