@@ -65,7 +65,7 @@ tic-tac-toe-game/
 
 ### Home Page
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b3b0c654-c21c-4f2a-9a7d-eb319c75613c" width="500">
+  <img src="https://github.com/user-attachments/assets/b3b0c654-c21c-4f2a-9a7d-eb319c75613c" width="350">
 </p>
 <em>Clean home page with Start Game and Exit buttons</em>
 
