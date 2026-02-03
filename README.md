@@ -275,7 +275,7 @@ A player wins by getting **3 of their marks** in:
 ### Future Enhancements
 The codebase is structured for easy expansion:
 
-1. **AI Opponent**
+1. **Computer Opponent**
    - Minimax algorithm for unbeatable AI
    - Difficulty levels (Easy, Medium, Hard)
 
@@ -290,7 +290,7 @@ The codebase is structured for easy expansion:
    - Win celebration effects
 
 4. **Additional Game Modes**
-   - Single-player vs AI
+   - Single-player vs Computer
    - Leaderboard tracking
    - Difficulty settings
 
@@ -304,7 +304,6 @@ The codebase is structured for easy expansion:
 - UI/UX layout suggestions
 - Documentation and README generation
 - Potential enhancement strategies
-- Readme.md Structure
 
 **Human-Created**: 
 - Core game logic implementation
