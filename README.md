@@ -50,8 +50,7 @@ tic-tac-toe-game/
 │   ├── GameLogic.java              # Win/tie detection logic (enhanced)
 │   └── AIPlayer.java               # AI opponent implementation (enhanced)
 ├── resources/
-│   ├── sounds/                     # Game sound effects (enhanced)
-│   └── styles/                     # Optional styling files
+│   └── styles/                    
 ├── README.md                        # Project documentation
 ├── pom.xml                          # Maven configuration
 ├── .gitignore                       # Git ignore file
