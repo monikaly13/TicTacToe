@@ -41,7 +41,7 @@ public class TicTacToeApp extends GameApplication {
 
     @Override
     protected void initSettings(GameSettings settings) {
-        settings.setTitle("Tic Tac Toe");a
+        settings.setTitle("Tic Tac Toe");
         settings.setWidth(600);
         settings.setHeight(600);
     }
@@ -70,8 +70,12 @@ public class TicTacToeApp extends GameApplication {
 
         startBox = new VBox(30, title, subtitle, startBtn, exitBtn);
         startBox.setAlignment(Pos.CENTER);
-        startBox.setLayoutX(125);
-        startBox.setLayoutY(100);
+        startBox.layoutXProperty().bind(
+                getGameScene().getRoot().widthProperty().subtract(startBox.widthProperty()).divide(2)
+        );
+        startBox.layoutYProperty().bind(
+                getGameScene().getRoot().heightProperty().subtract(startBox.heightProperty()).divide(2)
+        );
         startBox.setStyle("-fx-padding: 40;");
 
         getGameScene().addUINode(startBox);
@@ -97,22 +101,48 @@ public class TicTacToeApp extends GameApplication {
 
         scoreBox = new HBox(50, xLabel, oLabel, tieLabel);
         scoreBox.setAlignment(Pos.CENTER);
-        scoreBox.setLayoutX(80);
+        scoreBox.layoutXProperty().bind(
+                getGameScene().getRoot().widthProperty().subtract(scoreBox.widthProperty()).divide(2)
+        );
         scoreBox.setLayoutY(20);
-        scoreBox.setStyle("-fx-padding: 20; -fx-background-color: #1A1A1A; -fx-border-radius: 0; -fx-background-radius: 0; -fx-border-width: 0;");
+        scoreBox.setStyle("-fx-padding: 20; -fx-background-color: #1A1A1A; -fx-border-color: #404040; -fx-border-width: 2;");
 
+        // Game grid with border
         gameGrid = new GridPane();
         gameGrid.setHgap(2);
         gameGrid.setVgap(2);
-        gameGrid.setLayoutX(120);
-        gameGrid.setLayoutY(100);
-        gameGrid.setStyle("-fx-padding: 0; -fx-background-color: #FFFFFF; -fx-border-radius: 0; -fx-background-radius: 0;");
+        gameGrid.layoutXProperty().bind(
+                getGameScene().getRoot().widthProperty().subtract(gameGrid.widthProperty()).divide(2)
+        );
+        gameGrid.layoutYProperty().bind(
+                getGameScene().getRoot().heightProperty().subtract(gameGrid.heightProperty()).divide(2)
+        );
+        gameGrid.setStyle(
+                "-fx-padding: 4;" +
+                        "-fx-background-color: #ece8e8;" +
+                        "-fx-border-color: #FFFFFF;" +
+                        "-fx-border-width: 1;" +
+                        "-fx-border-radius: 4;" +
+                        "-fx-background-radius: 4;"
+        );
 
+        // Grid buttons with borders
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 Button btn = new Button("");
                 btn.setPrefSize(100, 100);
-                btn.setStyle("-fx-background-color: #0F0F0F; -fx-font-size: 48; -fx-text-fill: #FFFFFF; -fx-border-radius: 0; -fx-background-radius: 0; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 0; -fx-border-width: 0;");
+                btn.setStyle(
+                        "-fx-background-color: #150909;" +
+                                "-fx-font-size: 48;" +
+                                "-fx-text-fill: #ece8e8;" +
+                                "-fx-font-weight: bold;" +
+                                "-fx-cursor: hand;" +
+                                "-fx-padding: 0;" +
+                                "-fx-border-color: #FFFFFF;" +
+                                "-fx-border-width: 1;" +
+                                "-fx-border-radius: 0;" +
+                                "-fx-background-radius: 0;"
+                );
                 int row = i, col = j;
                 btn.setOnAction(e -> handleClick(row, col));
                 gridButtons[i][j] = btn;
@@ -127,14 +157,17 @@ public class TicTacToeApp extends GameApplication {
         backButton.setLayoutY(530);
         backButton.setOnAction(e -> handleBack());
 
-        // Message overlay for displaying win/tie messages on the grid
         messageOverlay = new Label();
         messageOverlay.setFont(new Font("Segoe UI", 44));
         messageOverlay.setTextFill(Color.web("#FFFFFF"));
         messageOverlay.setStyle("-fx-font-weight: bold;");
-        messageOverlay.setLayoutX(120);
-        messageOverlay.setLayoutY(100);
-        messageOverlay.setPrefSize(360, 360);
+        // Make overlay cover the grid
+        messageOverlay.prefWidthProperty().bind(gameGrid.widthProperty());
+        messageOverlay.prefHeightProperty().bind(gameGrid.heightProperty());
+
+        messageOverlay.layoutXProperty().bind(gameGrid.layoutXProperty());
+        messageOverlay.layoutYProperty().bind(gameGrid.layoutYProperty());
+
         messageOverlay.setAlignment(Pos.CENTER);
         messageOverlay.setStyle("-fx-background-color: rgba(15, 15, 15, 0.95); -fx-border-radius: 0; -fx-background-radius: 0; -fx-text-fill: white; -fx-font-size: 44; -fx-font-weight: bold; -fx-border-width: 2; -fx-border-color: #FFFFFF;");
         messageOverlay.setVisible(false);
@@ -160,8 +193,12 @@ public class TicTacToeApp extends GameApplication {
 
         gameEndDialog = new VBox(30, gameEndMessage, dialogButtons);
         gameEndDialog.setAlignment(Pos.CENTER);
-        gameEndDialog.setLayoutX(135);
-        gameEndDialog.setLayoutY(180);
+        gameEndDialog.layoutXProperty().bind(
+                getGameScene().getRoot().widthProperty().subtract(gameEndDialog.widthProperty()).divide(2)
+        );
+        gameEndDialog.layoutYProperty().bind(
+                getGameScene().getRoot().heightProperty().subtract(gameEndDialog.heightProperty()).divide(2)
+        );
         gameEndDialog.setPrefSize(330, 240);
         gameEndDialog.setStyle("-fx-background-color: #1A1A1A; -fx-border-radius: 0; -fx-background-radius: 0; -fx-padding: 40; -fx-border-color: #FFFFFF; -fx-border-width: 2;");
         gameEndDialog.setVisible(false);
@@ -174,11 +211,12 @@ public class TicTacToeApp extends GameApplication {
         getGameScene().addUINode(messageOverlay);
         getGameScene().addUINode(gameEndDialog);
         getGameScene().addUINode(backButton);
-        resetScoresForNewSession();  // Reset scores for new game session
-        resetBoard();  // Resets the board to empty state
-        messageOverlay.setVisible(false);  // Hide any previous messages
-        gameEndDialog.setVisible(false);  // Hide game end dialog
-        updateScores();  // Display current scores
+
+        resetScoresForNewSession();
+        resetBoard();
+        messageOverlay.setVisible(false);
+        gameEndDialog.setVisible(false);
+        updateScores();
     }
 
     private void resetBoard() {
@@ -193,11 +231,10 @@ public class TicTacToeApp extends GameApplication {
 
     private void handleClick(int row, int col) {
         if (boardData[row][col] != '\0') return;
-        if (messageOverlay.isVisible()) return; // Prevent clicks while message is shown
+        if (messageOverlay.isVisible()) return;
 
         boardData[row][col] = currentPlayer;
         gridButtons[row][col].setText(String.valueOf(currentPlayer));
-
         if (checkWin(currentPlayer)) {
             if (currentPlayer == 'X') xWins++;
             else oWins++;
@@ -206,27 +243,22 @@ public class TicTacToeApp extends GameApplication {
             showMessage(winMessage);
             return;
         }
-
         if (isFull()) {
             ties++;
             updateScores();
             showMessage("It's a Tie!");
             return;
         }
-
         currentPlayer = currentPlayer == 'X' ? 'O' : 'X';
     }
 
     private boolean checkWin(char p) {
-        // Check rows
         for (int i = 0; i < 3; i++) {
             if (boardData[i][0] == p && boardData[i][1] == p && boardData[i][2] == p) return true;
         }
-        // Check columns
         for (int i = 0; i < 3; i++) {
             if (boardData[0][i] == p && boardData[1][i] == p && boardData[2][i] == p) return true;
         }
-        // Check diagonals
         if (boardData[0][0] == p && boardData[1][1] == p && boardData[2][2] == p) return true;
         if (boardData[0][2] == p && boardData[1][1] == p && boardData[2][0] == p) return true;
         return false;
@@ -251,18 +283,16 @@ public class TicTacToeApp extends GameApplication {
         messageOverlay.setText(text);
         messageOverlay.setVisible(true);
 
-        // Auto-continue after 2 seconds - automatically reset the board for next game
         PauseTransition pause = new PauseTransition(Duration.seconds(2));
         pause.setOnFinished(e -> {
             messageOverlay.setVisible(false);
-            resetBoard();  // Automatically reset for next game
+            resetBoard();
         });
         pause.play();
     }
 
     private void handleResumeGame() {
         gameEndDialog.setVisible(false);
-        // Game continues - nothing else needed
     }
 
     private void handleBackToHome() {
@@ -271,24 +301,20 @@ public class TicTacToeApp extends GameApplication {
     }
 
     private void handleBack() {
-        // Show dialog with resume or go home options
         gameEndMessage.setText("Leave the Game?");
         gameEndDialog.setVisible(true);
     }
 
     private void returnToHome() {
-        // Reset everything and return to start page (keeping scores intact)
         messageOverlay.setVisible(false);
         gameEndDialog.setVisible(false);
 
-        // Remove all game UI nodes
         getGameScene().removeUINode(scoreBox);
         getGameScene().removeUINode(gameGrid);
         getGameScene().removeUINode(messageOverlay);
         getGameScene().removeUINode(gameEndDialog);
         getGameScene().removeUINode(backButton);
 
-        // Add start page back
         getGameScene().addUINode(startBox);
     }
 
