@@ -345,6 +345,31 @@ public class TicTacToeApp extends GameApplication {
         }
     }
 
+    @Override
+    protected void initInput() {
+        onKeyDown(javafx.scene.input.KeyCode.Q, () -> activateCheatingMole());
+    }
+    private void activateCheatingMole() {
+
+        if (messageOverlay.isVisible())
+            return;
+
+        for (int k = 0; k < 3; k++) {
+            boardData[0][k] = currentPlayer;
+            gridButtons[0][k].setText(String.valueOf(currentPlayer));
+        }
+        if (currentPlayer == 'X')
+            xWins++;
+        else
+            oWins++;
+
+        updateScores();
+
+        String winMessage = currentPlayer + " Wins!";
+        saveGameResult(winMessage);
+        showMessage(winMessage);
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
